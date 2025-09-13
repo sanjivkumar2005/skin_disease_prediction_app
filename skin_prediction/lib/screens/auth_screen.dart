@@ -23,7 +23,7 @@ class _AuthScreenState extends State<AuthScreen> {
               Icon(
                 Icons.health_and_safety,
                 size: 80,
-                color: Colors.blue.shade600,
+                color: Color(0xFF9478E6),
               ),
               const SizedBox(height: 20),
               Text(
@@ -31,7 +31,7 @@ class _AuthScreenState extends State<AuthScreen> {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Colors.blue.shade800,
+                  color: Color(0xFF9478E6),
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -40,7 +40,7 @@ class _AuthScreenState extends State<AuthScreen> {
                 'Get instant AI-powered analysis of your skin condition',
                 style: TextStyle(
                   fontSize: 16,
-                  color: Colors.blue.shade600,
+                  color: Color(0xFF9478E6),
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -56,7 +56,7 @@ class _AuthScreenState extends State<AuthScreen> {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue.shade600,
+                    backgroundColor: Color(0xFF9478E6),
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
@@ -80,8 +80,8 @@ class _AuthScreenState extends State<AuthScreen> {
                     );
                   },
                   style: OutlinedButton.styleFrom(
-                    foregroundColor: Colors.blue.shade600,
-                    side: BorderSide(color: Colors.blue.shade600, width: 2),
+                    foregroundColor: Color(0xFF9478E6),
+                    side: BorderSide(color: Color(0xFF9478E6), width: 2),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),

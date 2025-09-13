@@ -85,7 +85,7 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade50,
+      backgroundColor: const Color(0xFFF8F8F8),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -95,44 +95,251 @@ class _SignInScreenState extends State<SignInScreen> {
         ),
       ),
       body: SafeArea(
-        child: Padding(
+        child: SingleChildScrollView(
           padding: const EdgeInsets.all(20.0),
           child: Form(
             key: _formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const SizedBox(height: 20),
+                const SizedBox(height: 40),
+                
+                // Illustration - Person with smartphone
+                Container(
+                  height: 200,
+                  margin: const EdgeInsets.symmetric(horizontal: 20),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.05),
+                        blurRadius: 10,
+                        offset: const Offset(0, 5),
+                      ),
+                    ],
+                  ),
+                  child: Stack(
+                    children: [
+                      // Background shape
+                      Positioned(
+                        right: -20,
+                        top: -20,
+                        child: Container(
+                          width: 120,
+                          height: 120,
+                          decoration: BoxDecoration(
+                            color: const Color(0xFF9478E6).withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(60),
+                          ),
+                        ),
+                      ),
+                      // Plant
+                      Positioned(
+                        right: 20,
+                        bottom: 20,
+                        child: Container(
+                          width: 30,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            color: const Color(0xFF9478E6).withOpacity(0.3),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Column(
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.only(top: 5),
+                                width: 20,
+                                height: 8,
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFF9478E6),
+                                  borderRadius: BorderRadius.circular(4),
+                                ),
+                              ),
+                              const SizedBox(height: 2),
+                              Container(
+                                width: 20,
+                                height: 8,
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFF9478E6),
+                                  borderRadius: BorderRadius.circular(4),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      // Person
+                      Positioned(
+                        left: 20,
+                        bottom: 20,
+                        child: Container(
+                          width: 60,
+                          height: 80,
+                          child: Stack(
+                            children: [
+                              // Body
+                              Positioned(
+                                bottom: 0,
+                                left: 10,
+                                child: Container(
+                                  width: 30,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                ),
+                              ),
+                              // Head
+                              Positioned(
+                                top: 0,
+                                left: 15,
+                                child: Container(
+                                  width: 20,
+                                  height: 20,
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFF9478E6),
+                                    shape: BoxShape.circle,
+                                  ),
+                                ),
+                              ),
+                              // Small phone in hands
+                              Positioned(
+                                bottom: 25,
+                                left: 5,
+                                child: Container(
+                                  width: 12,
+                                  height: 18,
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey.shade800,
+                                    borderRadius: BorderRadius.circular(3),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      // Large phone screen
+                      Positioned(
+                        right: 40,
+                        top: 30,
+                        child: Container(
+                          width: 80,
+                          height: 120,
+                          decoration: BoxDecoration(
+                            color: Colors.grey.shade900,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Container(
+                            margin: const EdgeInsets.all(4),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFF9478E6),
+                              borderRadius: BorderRadius.circular(6),
+                            ),
+                            child: Column(
+                              children: [
+                                const SizedBox(height: 8),
+                                // Profile icon
+                                Container(
+                                  width: 30,
+                                  height: 30,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Icon(
+                                    Icons.person,
+                                    size: 20,
+                                    color: const Color(0xFF9478E6),
+                                  ),
+                                ),
+                                const SizedBox(height: 8),
+                                // Input fields
+                                Container(
+                                  margin: const EdgeInsets.symmetric(horizontal: 8),
+                                  width: double.infinity,
+                                  height: 8,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(4),
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Container(
+                                  margin: const EdgeInsets.symmetric(horizontal: 8),
+                                  width: double.infinity,
+                                  height: 8,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(4),
+                                  ),
+                                ),
+                                const Spacer(),
+                                // Login button
+                                Container(
+                                  margin: const EdgeInsets.all(8),
+                                  width: double.infinity,
+                                  height: 16,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                ),
+                                const SizedBox(height: 8),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                
+                const SizedBox(height: 40),
+                
                 Text(
                   'Sign In',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
-                    color: Colors.blue.shade800,
+                    color: Color(0xFF9478E6),
                   ),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  'Welcome back! Please sign in to continue.',
+                  'Enter Valid Email address & password to continue',
                   style: TextStyle(
                     fontSize: 16,
-                    color: Colors.blue.shade600,
+                    color: Colors.grey.shade600,
                   ),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 40),
+                
                 TextFormField(
                   controller: _emailController,
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
-                    labelText: 'Email',
-                    prefixIcon: const Icon(Icons.email),
+                    hintText: 'Email address',
+                    prefixIcon: const Icon(Icons.email_outlined, color: Colors.grey),
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: BorderSide(color: Colors.grey.shade300),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: BorderSide(color: Colors.grey.shade300),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: const BorderSide(color: Color(0xFF9478E6)),
                     ),
                     filled: true,
                     fillColor: Colors.white,
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -145,15 +352,17 @@ class _SignInScreenState extends State<SignInScreen> {
                   },
                 ),
                 const SizedBox(height: 20),
+                
                 TextFormField(
                   controller: _passwordController,
                   obscureText: _obscurePassword,
                   decoration: InputDecoration(
-                    labelText: 'Password',
-                    prefixIcon: const Icon(Icons.lock),
+                    hintText: 'Password',
+                    prefixIcon: const Icon(Icons.lock_outline, color: Colors.grey),
                     suffixIcon: IconButton(
                       icon: Icon(
-                        _obscurePassword ? Icons.visibility : Icons.visibility_off,
+                        _obscurePassword ? Icons.visibility_outlined : Icons.visibility_off_outlined,
+                        color: Colors.grey,
                       ),
                       onPressed: () {
                         setState(() {
@@ -162,10 +371,20 @@ class _SignInScreenState extends State<SignInScreen> {
                       },
                     ),
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: BorderSide(color: Colors.grey.shade300),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: BorderSide(color: Colors.grey.shade300),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: const BorderSide(color: Color(0xFF9478E6)),
                     ),
                     filled: true,
                     fillColor: Colors.white,
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -177,33 +396,55 @@ class _SignInScreenState extends State<SignInScreen> {
                     return null;
                   },
                 ),
+                
+                const SizedBox(height: 10),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                    onPressed: () {
+                      // Add forget password functionality
+                    },
+                    child: const Text(
+                      'Forget password',
+                      style: TextStyle(
+                        color: Color(0xFF9478E6),
+                        fontSize: 14,
+                      ),
+                    ),
+                  ),
+                ),
+                
                 const SizedBox(height: 30),
+                
                 SizedBox(
-                  height: 50,
+                  height: 56,
                   child: ElevatedButton(
                     onPressed: _isLoading ? null : _signIn,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue.shade600,
+                      backgroundColor: const Color(0xFF9478E6),
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(15),
                       ),
+                      elevation: 0,
                     ),
                     child: _isLoading
                         ? const CircularProgressIndicator(color: Colors.white)
                         : const Text(
-                            'Sign In',
-                            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                            'Login',
+                            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                           ),
                   ),
                 ),
-                const SizedBox(height: 20),
+                
+                const SizedBox(height: 40),
+                
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Don't have an account? ",
-                      style: TextStyle(color: Colors.blue.shade600),
+                      "Haven't any account? ",
+                      style: TextStyle(color: Colors.grey.shade600),
                     ),
                     TextButton(
                       onPressed: () {
@@ -212,11 +453,11 @@ class _SignInScreenState extends State<SignInScreen> {
                           MaterialPageRoute(builder: (context) => const SignUpScreen()),
                         );
                       },
-                      child: Text(
-                        'Sign Up',
+                      child: const Text(
+                        'Sign up',
                         style: TextStyle(
-                          color: Colors.blue.shade800,
-                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF9478E6),
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                     ),

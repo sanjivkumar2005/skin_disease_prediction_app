@@ -48,7 +48,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Icon(
               Icons.health_and_safety,
               size: 100,
-              color: Colors.blue.shade600,
+              color: Color(0xFF9478E6),
             ),
             const SizedBox(height: 20),
             Text(
@@ -56,7 +56,7 @@ class _SplashScreenState extends State<SplashScreen> {
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Colors.blue.shade800,
+                color: Color(0xFF9478E6),
               ),
             ),
             const SizedBox(height: 10),
@@ -64,12 +64,12 @@ class _SplashScreenState extends State<SplashScreen> {
               'AI-Powered Skin Analysis',
               style: TextStyle(
                 fontSize: 16,
-                color: Colors.blue.shade600,
+                color: Color(0xFF9478E6),
               ),
             ),
             const SizedBox(height: 40),
             CircularProgressIndicator(
-              color: Colors.blue.shade600,
+              color: Color(0xFF9478E6),
             ),
           ],
         ),

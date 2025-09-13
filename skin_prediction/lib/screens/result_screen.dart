@@ -62,14 +62,21 @@ class _ResultScreenState extends State<ResultScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade50,
+      backgroundColor: const Color(0xFFF8F8F8),
       appBar: AppBar(
-        backgroundColor: Colors.blue.shade600,
-        foregroundColor: Colors.white,
-        title: const Text('Prediction Result'),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.pop(context),
+        ),
+        title: const Text(
+          'Prediction Result',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+          ),
         ),
       ),
       body: SafeArea(
@@ -79,14 +86,14 @@ class _ResultScreenState extends State<ResultScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     CircularProgressIndicator(
-                      color: Colors.blue.shade600,
+                      color: const Color(0xFF9478E6),
                     ),
                     const SizedBox(height: 20),
                     Text(
                       'Analyzing your image...',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 18,
-                        color: Colors.blue.shade600,
+                        color: Color(0xFF9478E6),
                       ),
                     ),
                   ],
@@ -126,8 +133,12 @@ class _ResultScreenState extends State<ResultScreen> {
                           ElevatedButton(
                             onPressed: () => Navigator.pop(context),
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.blue.shade600,
+                              backgroundColor: const Color(0xFF9478E6),
                               foregroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              elevation: 0,
                             ),
                             child: const Text('Go Back'),
                           ),
@@ -170,10 +181,10 @@ class _ResultScreenState extends State<ResultScreen> {
                           padding: const EdgeInsets.all(20),
                           decoration: BoxDecoration(
                             color: Colors.white,
-                            borderRadius: BorderRadius.circular(15),
+                            borderRadius: BorderRadius.circular(20),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black.withOpacity(0.1),
+                                color: Colors.black.withOpacity(0.05),
                                 blurRadius: 10,
                                 offset: const Offset(0, 5),
                               ),
@@ -184,10 +195,10 @@ class _ResultScreenState extends State<ResultScreen> {
                             children: [
                               Text(
                                 'Prediction Result',
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 24,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.blue.shade800,
+                                  color: Color(0xFF9478E6),
                                 ),
                               ),
                               const SizedBox(height: 20),
@@ -197,7 +208,7 @@ class _ResultScreenState extends State<ResultScreen> {
                                 children: [
                                   Icon(
                                     Icons.health_and_safety,
-                                    color: Colors.blue.shade600,
+                                    color: const Color(0xFF9478E6),
                                     size: 24,
                                   ),
                                   const SizedBox(width: 10),
@@ -207,7 +218,7 @@ class _ResultScreenState extends State<ResultScreen> {
                                       style: TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.w600,
-                                        color: Colors.blue.shade700,
+                                        color: Colors.grey.shade700,
                                       ),
                                     ),
                                   ),
@@ -230,7 +241,7 @@ class _ResultScreenState extends State<ResultScreen> {
                                 children: [
                                   Icon(
                                     Icons.analytics,
-                                    color: Colors.green.shade600,
+                                    color: const Color(0xFF9478E6),
                                     size: 24,
                                   ),
                                   const SizedBox(width: 10),
@@ -240,7 +251,7 @@ class _ResultScreenState extends State<ResultScreen> {
                                       style: TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.w600,
-                                        color: Colors.blue.shade700,
+                                        color: Colors.grey.shade700,
                                       ),
                                     ),
                                   ),
@@ -268,7 +279,7 @@ class _ResultScreenState extends State<ResultScreen> {
                                 children: [
                                   Icon(
                                     Icons.description,
-                                    color: Colors.purple.shade600,
+                                    color: const Color(0xFF9478E6),
                                     size: 24,
                                   ),
                                   const SizedBox(width: 10),
@@ -278,7 +289,7 @@ class _ResultScreenState extends State<ResultScreen> {
                                       style: TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.w600,
-                                        color: Colors.blue.shade700,
+                                        color: Colors.grey.shade700,
                                       ),
                                     ),
                                   ),
@@ -301,20 +312,21 @@ class _ResultScreenState extends State<ResultScreen> {
                         
                         // Solution button
                         SizedBox(
-                          height: 50,
+                          height: 56,
                           child: ElevatedButton.icon(
                             onPressed: _navigateToSolution,
-                            icon: const Icon(Icons.medical_services),
+                            icon: const Icon(Icons.medical_services, color: Colors.white),
                             label: const Text(
                               'Get Treatment Solution',
-                              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                             ),
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.green.shade600,
+                              backgroundColor: const Color(0xFF9478E6),
                               foregroundColor: Colors.white,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(15),
                               ),
+                              elevation: 0,
                             ),
                           ),
                         ),
